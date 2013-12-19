@@ -62,9 +62,29 @@ namespace Yandex
         {
             string request_ulr =
                 string.Format(REQUESRT_URL, StringMakeValid(location), results, LangTypeToStr(lang)) +
-                (string.IsNullOrEmpty(_key) ? string.Empty : "?key=" + _key);
+                (string.IsNullOrEmpty(_key) ? string.Empty : "&key=" + _key);
 
-            return new GeoObjectCollection(DownloadString(request_ulr));   //new GeoObjectCollection(File.ReadAllText(@"C:\Users\***\Desktop\2.x.xml")); //
+            return new GeoObjectCollection(DownloadString(request_ulr));   //new GeoObjectCollection(File.ReadAllText(@"C:\Users\***\Desktop\2.x.xml"));
+        }
+
+        /// <summary>
+        /// Location determination by name, indicating the quantity of objects to return and preference language.
+        /// Allows limit the search or affect the issuance result.
+        /// </summary>
+        /// <param name="location">Name of a geographic location.</param>
+        /// <param name="results">Maximum number of objects to return.</param>
+        /// <param name="lang">Preference language for describing objects.</param>
+        /// <param name="search_area">Search geographical area, affects to issuance of results.</param>
+        /// <param name="rspn">Allows limit the search (true) or affect the issuance result (false - default).</param>
+        /// <returns>Collection of found locations</returns>
+        public static GeoObjectCollection Geocode(string location, short results, LangType lang, SearchArea search_area, bool rspn = false)
+        {
+            string request_ulr =
+                string.Format(REQUESRT_URL, StringMakeValid(location), results, LangTypeToStr(lang)) +
+                string.Format("&ll={0}&spn={1}&rspn={2}", search_area.LongLat.ToString("{0},{1}"), search_area.Spread.ToString("{0},{1}"), rspn ? 1 : 0) +
+                (string.IsNullOrEmpty(_key) ? string.Empty : "&key=" + _key);
+
+            return new GeoObjectCollection(DownloadString(request_ulr));
         }
         #endregion
 
@@ -97,7 +117,7 @@ namespace Yandex
                 default: return "ru-RU";
             }
         }
-        public static string DownloadString(string url)
+        private static string DownloadString(string url)
         {
             WebRequest request = WebRequest.Create(url);
             request.Credentials = CredentialCache.DefaultCredentials;

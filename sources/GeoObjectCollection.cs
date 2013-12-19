@@ -25,7 +25,7 @@ namespace Yandex
         // ToDo: not best specification realise
         //       - null varibles and geo varibles
         //       - null response
-        //       - ll,spn bounds
+        //       + ll,spn bounds
         private void ParseXml(string xml)
         {
             XmlDocument doc = new XmlDocument();
@@ -138,6 +138,10 @@ namespace Yandex
         {
             return string.Format("{0} {1}", this.Long.ToString(CultureInfo.InvariantCulture), this.Lat.ToString(CultureInfo.InvariantCulture));
         }
+        public string ToString(string format)
+        {
+            return string.Format(format, this.Long.ToString(CultureInfo.InvariantCulture), this.Lat.ToString(CultureInfo.InvariantCulture));
+        }
 
         public string ToString(ToStringFunc formatFunc)
         {
@@ -152,6 +156,16 @@ namespace Yandex
         {
             this.LowerCorner = lowerCorner;
             this.UpperCorner = upperCorner;
+        }
+    }
+
+    public struct SearchArea
+    {
+        public GeoPoint LongLat, Spread;
+        public SearchArea(GeoPoint CenterLongLat, GeoPoint Spread)
+        {
+            this.LongLat = CenterLongLat;
+            this.Spread = Spread;
         }
     }
 
