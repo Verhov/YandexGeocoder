@@ -83,7 +83,7 @@ namespace Yandex
     public class GeoMetaData
     {
         public KindType Kind = KindType.locality;
-        public string Text;
+        public string Text = string.Empty;
         //ToDo:
             //AddressDetails
         public GeoMetaData() { }
@@ -113,6 +113,11 @@ namespace Yandex
                 case "street":      return KindType.street;
                 default: return KindType.locality; //throw new System.Exception();
             }
+        }
+
+        public override string ToString()
+        {
+            return Text;
         }
     }
 
@@ -156,6 +161,11 @@ namespace Yandex
         {
             this.LowerCorner = lowerCorner;
             this.UpperCorner = upperCorner;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("[{0}] [{1}]", LowerCorner.ToString(), UpperCorner.ToString());
         }
     }
 

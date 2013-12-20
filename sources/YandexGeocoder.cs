@@ -91,7 +91,7 @@ namespace Yandex
 
         // ToDo: back geocoding methods
         #region ReGeokode
-        public static string ReGeocode(double _long, double _lat)
+        private static string ReGeocode(double _long, double _lat)
         {
             return "";
         }
