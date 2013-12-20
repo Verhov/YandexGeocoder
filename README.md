@@ -20,9 +20,10 @@ Example
 -----------
 <img src="https://github.com/Verhov/YandexGeocoder/blob/master/geocode_example.png?raw=true" />
 
-License
+
+Working notes
 -----------
-**Attention:** Solution is under development. Provided "AS IS", by MIT License.
+**Attention:** Solution is under development. Provided "AS IS", under MIT License.
 
 
 The MIT License (MIT)
