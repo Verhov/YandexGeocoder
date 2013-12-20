@@ -18,7 +18,7 @@ foreach (GeoObject result in results)
 
 Example
 -----------
-<img src="https://github.com/Verhov/YandexGeocoder/blob/master/example.png?raw=true" />
+<img src="https://github.com/Verhov/YandexGeocoder/blob/master/geocode_example.png?raw=true" />
 
 License
 -----------
