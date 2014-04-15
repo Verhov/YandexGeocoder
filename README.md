@@ -19,7 +19,7 @@ foreach (GeoObject result in results)
 }
 ```
 
-Yandex geocoding service: http://api.yandex.com/maps/doc/geocoder/desc/concepts/About.xml
+Yandex geocoding service specification: http://api.yandex.com/maps/doc/geocoder/desc/concepts/About.xml
 
 Home website: http://michael.verhov.com/en/post/yandex_geocoder
 
@@ -30,7 +30,8 @@ Example
 
 Working notes
 -----------
-**Attention:** Solution is under development. Provided "AS IS", under MIT License.
+ - Provided "AS IS", under MIT License;
+ - Service capabilities implemented not completely at the moment, in the future possible implementation of the Reverse geocoding functions and searching the nearest metro station;
 
 
 The MIT License (MIT)
