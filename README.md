@@ -1,12 +1,10 @@
 YandexGeocoder
 ==============
+C# Geocoder module using API of Yandex.Maps services.
 
 Capabilities
 -----------
-C# Yandex.Maps Geocoder API module:
   - Can determine geographical coordinates and other information about an object using its name or address.
-
-
 
 
 Usage
