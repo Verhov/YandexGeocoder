@@ -1,11 +1,6 @@
 YandexGeocoder
 ==============
 
-Yandex geocoding service: http://api.yandex.com/maps/doc/geocoder/desc/concepts/About.xml
-
-Home website: http://michael.verhov.com/en/post/yandex_geocoder
-
-
 Capabilities
 -----------
 C# Yandex.Maps Geocoder API module:
@@ -26,6 +21,9 @@ foreach (GeoObject result in results)
 }
 ```
 
+Yandex geocoding service: http://api.yandex.com/maps/doc/geocoder/desc/concepts/About.xml
+
+Home website: http://michael.verhov.com/en/post/yandex_geocoder
 
 Example
 -----------
